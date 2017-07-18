@@ -1,4 +1,7 @@
 security:
+    role_hierarchy:
+        ROLE_ADMIN: ['ROLE_USER']
+
     encoders:
         # Our user class and the algorithm we'll use to encode passwords
         # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
@@ -43,3 +46,4 @@ security:
         # this is a catch-all for the admin area
         # additional security lives in the controllers
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }
